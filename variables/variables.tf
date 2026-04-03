@@ -14,3 +14,32 @@ variable "ec2_tags" {
         Purpose = "variables-demo"
     }
 }
+
+variable "sg_name" {
+    default = "allow-all"
+}
+
+variable "sg_description" {
+    default = "Allowing all ports from internet"
+}
+
+variable "from_port" {
+    default = 0
+}
+
+variable "to_port" {
+    type = number
+    default = 0      
+}
+
+variable "cidr_blocks" {
+    type = list(string)
+    default = ["0.0.0.0/0"]  
+}
+
+variable "sg_tags" {
+    default = {
+        Name = "allow-all"
+    }
+  
+}

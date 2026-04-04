@@ -48,7 +48,13 @@ variable "environment" {
 }
 
 variable "instances" {
-    default = ["mongodb", "redis", "mysql", "rabbitmq"]
+    default = {
+        mongodb = "t3.micro"  #Here each keyword is assigned for every iteration so that we will get each.key and each.value
+        redis = "t3.micro"
+        mysql = "t3.small"
+        rabbitmq = "t3.micro"
+
+    }
   
 }
 

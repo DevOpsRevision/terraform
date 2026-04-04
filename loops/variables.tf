@@ -52,3 +52,13 @@ variable "instances" {
   
 }
 
+variable "zone_id" {
+    default = "Z09260871ALCRUTIR75TM"
+}
+
+variable "domain_name" {
+    default = "easydevops.fun"
+  
+}
+
+

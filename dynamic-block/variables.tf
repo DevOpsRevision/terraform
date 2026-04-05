@@ -74,12 +74,8 @@ variable "ingress_ports" {
       to_ports   = 22
     },
     {
-      from_ports = 80
-      to_ports   = 80
-    },
-    {
-      from_ports = 80
-      to_ports   = 80
+      from_ports = 8080
+      to_ports   = 8080
     },
     {
       from_ports = 80

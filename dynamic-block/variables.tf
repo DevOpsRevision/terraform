@@ -68,10 +68,20 @@ variable "domain_name" {
 }
 
 variable "ingress_ports" {
-    default = {
+    default = [
+        {
         from_port = 22
         to_port = 22
+    },
+    {
+        from_port = 80
+        to_port = 80
+    },
+    {
+        from_port = 80
+        to_port = 80
     }
+    ]
   
 }
 

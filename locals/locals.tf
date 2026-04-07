@@ -7,5 +7,5 @@ locals {
     }
   )
 
-  final_name = "${var.domain_name}-${var.sg_tags}"
+  final_name = "${var.domain_name}-${var.environment}"
 }

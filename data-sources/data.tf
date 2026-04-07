@@ -6,7 +6,6 @@ data "aws_ami" "joinDevOps"{
       name = "name"
       values = ["Redhat-9-DevOps-Practice"]
     }
-
 }
 
 output "ami_id" {

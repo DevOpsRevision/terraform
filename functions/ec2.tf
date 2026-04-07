@@ -1,12 +1,16 @@
 resource "aws_instance" "roboshop" {
-    count = 4
+    count = length(var.instances)
     ami = var.ami_id
     instance_type = var.environment == "dev" ? var.instance_type : "t3.small"
     vpc_security_group_ids = [ aws_security_group.allow-all.id ]
 
-    tags = {
-        Name = var.instances[count.index] 
-    }
+    tags = merge(
+        var.common_tags,
+        {
+            Component = var.instances[count.index]
+            Name = var.instances[count.index]
+        }
+    )
 }
 
 resource "aws_security_group" "allow-all" {
@@ -29,5 +33,10 @@ resource "aws_security_group" "allow-all" {
         ipv6_cidr_blocks = ["::/0"]
     }
 
-    tags = var.sg_tags
+    tags = merge(
+        var.common_tags,
+        {
+            Name = var.sg_tags
+        }
+    )
 }

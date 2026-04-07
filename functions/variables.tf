@@ -61,4 +61,11 @@ variable "domain_name" {
   
 }
 
+variable "common_tags" {
+    default = {
+        Project = "Roboshop"
+        Terraform = "true"
+    }
+}
+
 

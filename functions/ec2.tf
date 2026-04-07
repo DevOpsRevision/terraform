@@ -34,9 +34,6 @@ resource "aws_security_group" "allow-all" {
     }
 
     tags = merge(
-        var.common_tags,
-        {
-            Name = var.sg_tags
-        }
+        var.common_tags, var.sg_tags
     )
 }

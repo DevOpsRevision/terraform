@@ -6,13 +6,20 @@ terraform{
         }
     }
 
-    #Configure Backend in S3 bucket
-    backend "s3" {
+    #Configure Backend in S3 bucket   -->Currently depricated
+    # backend "s3" {
+    #     bucket = "easydevops-remote-state"
+    #     key = "remote-state-demo"
+    #     region = "us-east-1"
+    #     dynamodb_table = "easydevops-remote-state"
+    # }
+
+        backend "s3" {
         bucket = "easydevops-remote-state"
         key = "remote-state-demo"
         region = "us-east-1"
-        dynamodb_table = "easydevops-remote-state"
-      
+        encrypt = true
+        use_lockfile = true      
     }
 }
 
